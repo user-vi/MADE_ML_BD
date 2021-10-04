@@ -51,6 +51,7 @@ hdfs fs -put /bigdata/hw01/new_file.txt /bigdata/new_destination
 hdfs dfs -setrep -w 4 /bigdata/hw01/new_file.txt
 ```
 It spent 20 mins
+
 3 Filnd information about blocks and location
 ```
 hdfs fsck /bigdata/hw01/new_file.txt -files -blocks -location
