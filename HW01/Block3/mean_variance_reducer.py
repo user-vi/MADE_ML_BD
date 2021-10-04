@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import sys
 
 
@@ -40,4 +40,4 @@ for line in sys.stdin:
         chunk_size = value
         var = 0
 
-print(f'{mean_cur} {var}')
+print(mean_cur, var)
