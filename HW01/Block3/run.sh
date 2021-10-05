@@ -7,3 +7,5 @@ yarn jar /opt/hadoop-3.2.1/share/hadoop/tools/lib/hadoop-streaming-3.2.1.jar \
 	-numReduceTasks 1 \
 	-input /Block3/AB_NYC_2019.csv \
 	-output /output/
+    
+hdfs dfs -cat /output/part*

@@ -48,19 +48,30 @@ for line in sys.stdin:
         mean_cur = key
         chunk_size += value
     else:
-        if mean_cur:
+        if mean_cur != 0:
             chunk_size_prev += chunk_size
             var_prev = var
             mean_prev = mean_cur
 
             mean_cur = key
             chunk_size = value
+
             mean_cur = get_mean(chunk_size_prev, mean_prev, chunk_size, mean_cur)
             var = get_var(chunk_size_prev, var_prev, mean_prev, chunk_size, key, 0)
+            mean_cur = None
             continue
 
         mean_cur = key
         chunk_size = value
-        var = 0
+if mean_cur is not None:
+    chunk_size_prev += chunk_size
+    var_prev = var
+    mean_prev = mean_cur
+
+    mean_cur = key
+    chunk_size = value
+    
+    mean_cur = get_mean(chunk_size_prev, mean_prev, chunk_size, mean_cur)
+    var = get_var(chunk_size_prev, var_prev, mean_prev, chunk_size, key, 0)
 
 print(mean_cur, var)
