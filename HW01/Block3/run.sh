@@ -1,13 +1,9 @@
-set -x
-
-HADOOP_STREAMING_JAR=/opt/hadoop-3.2.1/share/hadoop/tools/lib/hadoop-streaming-3.2.1.jar
-
-hdfs dfs -rm -r /HW01/output
-
-yarn jar $HADOOP_STREAMING_JAR \
-	-files mapper.py, reducer.py \
-	-mapper "python3 ./mapper.py" \
-	-reducer "python3 ./reducer.py" \
+hdfs dfs -rm -r /output/
+	
+yarn jar /opt/hadoop-3.2.1/share/hadoop/tools/lib/hadoop-streaming-3.2.1.jar \
+	-files mapper.py,reducer.py \
+	-mapper "python3 mapper.py" \
+	-reducer "python3 reducer.py" \
 	-numReduceTasks 1 \
-	-input /AB_NYC_2019.csv \
-	-output /output
+	-input /Block3/AB_NYC_2019.csv \
+	-output /output/
