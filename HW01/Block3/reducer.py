@@ -63,6 +63,7 @@ for line in sys.stdin:
 
         mean_cur = key
         chunk_size = value
+
 if mean_cur is not None:
     chunk_size_prev += chunk_size
     var_prev = var
