@@ -31,5 +31,9 @@ Put file from docker to hdfs:
   hdfs dfs -put File_name /
 ```
 
+![alt text](https://github.com/user-vi/MADE_ML_BD/blob/main/HW01/Block1/Screenshot1.png)
+
+![alt text](https://github.com/user-vi/MADE_ML_BD/blob/main/HW01/Block1/Screenshot2.png)
+
 
 
