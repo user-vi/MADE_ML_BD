@@ -10,10 +10,6 @@ import scala.annotation.tailrec
 
 object Main extends App {
 
-  def mae(y: DenseVector[Double], y_hat: DenseVector[Double]): Double = {
-    mean(abs(y - y_hat))
-  }
-
   val model = new SGD()
 
   val X_train: DenseMatrix[Double] = DenseMatrix.rand[Double](1000000, 3)
@@ -24,8 +20,7 @@ object Main extends App {
 
   model.fit(X_train, y_train)
   val y_hat: DenseVector[Double] = model.predict(X_test)
-
-  val score = mae(y_test, y_hat)
+  
   println(model.cofficients())
 }
 
