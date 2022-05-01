@@ -4,7 +4,7 @@ from pyspark.sql import SparkSession
 from prepare_data_for_scoring_baseline import ParquetCreator, write_parquet
 
 """
-Для запуска используй команду в терминале
+Run in terminal
 ```pytest -v ./test.py```
 
 """
