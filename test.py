@@ -20,7 +20,6 @@ def spark():
         .appName("test") \
         .enableHiveSupport() \
         .getOrCreate()
-#  Your hostname, MB483582.local resolves to a loopback address: 127.0.0.1; using 192.168.0.5 instead (on interface en0)
 
 @pytest.mark.skip()
 def test_tmpdir(spark, tmpdir):
